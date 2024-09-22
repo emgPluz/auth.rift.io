@@ -1,48 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>hCaptcha Example</title>
-    <meta charset="utf-8">
-    <script src="https://hcaptcha.com/1/hcaptcha.js" async defer></script>
-    <style>
-        body {
-            font-family: sans-serif;
-        }
-    </style>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Website</title>
+    <link rel="stylesheet" href="styles.css"> </head>
 <body>
-    <h1>hCaptcha Integration Example</h1>
-    <button id="authenticate-button">Authenticate</button>
-    <div id="hcaptcha-container"></div>
-    <script>
-        const hcaptchaContainer = document.getElementById('hcaptcha-container');
-const authenticateButton = document.getElementById('authenticate-button');
-
-authenticateButton.addEventListener('click', async () => {
-  const hcaptcha = new window.hcaptcha.HCaptcha(hcaptchaContainer);
-  try {
-    const token = await hcaptcha.getToken();
-    console.log('hCaptcha token:', token);
-
-    // Send the hCaptcha token to your server for verification
-    const response = await fetch('/verify-hcaptcha', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ token })
-    });
-
-    if (response.ok) {
-      // Handle successful verification
-      console.log('hCaptcha verification successful');
-    } else {
-      console.error('hCaptcha verification failed');
-    }
-  } catch (error) {
-    console.error('hCaptcha error:', error);
-  }
-});
-    </script>
+    <div class="container">
+        <h1>Welcome to my Stylish Website!</h1>
+        <button class="invite-button">Invite</button>
+    </div>
 </body>
 </html>
